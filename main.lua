@@ -49,8 +49,7 @@ function HandleTimePassedForFrames(dt)
 end
 
 function SwitchTweensToNextFrame()
-  for playaName, playaDef in pairs(Playaz) do  
-    -- Playaz[playaName].current.x, Playaz[playaName].current.y = Playaz[playaName].nextTarget.x, Playaz[playaName].nextTarget.y
+  for playaName, playaDef in pairs(Playaz) do    
     Playaz[playaName].nextTarget.x, Playaz[playaName].nextTarget.y = GetPlayaPositionCalculated(playaName, Frames[CurrentFrame])
   end
 end
@@ -86,8 +85,6 @@ function GetPlayaPositionCalculated(playa, frame)
 end
 
 function DrawSquare(playaName, colors)  
-  -- local x,y = GetPlayaNamePositionCalculated(playa, Frames[CurrentFrame])
-  -- Playaz[playa].x,  Playaz[playa].y = y  
   local x, y = Playaz[playaName].current.x, Playaz[playaName].current.y
   love.graphics.setColor(colors)
   love.graphics.rectangle('fill', x, y, SquareWidth, SquareHeight)
